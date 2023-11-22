@@ -6,5 +6,5 @@ from main.views import SiteTemplate
 app_name = MainConfig.name
 
 urlpatterns = [
-    path(' ', SiteTemplate.as_view(), name='general')
+    path('', SiteTemplate.as_view(), name='base'),
 ]

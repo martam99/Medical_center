@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j4tb6dfaes@eb)%it=bwl0wqw3jf85g4v^mcstoj*oyjr@i=jn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     # my apps
     'main',
     'medcenter',
-    'user'
+    'user',
+    'blog'
 ]
 
 MIDDLEWARE = [

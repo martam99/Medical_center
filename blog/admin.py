@@ -6,4 +6,4 @@ from blog.models import Blog
 # Register your models here.
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = '__all__'
+    list_display = ('title', 'content', 'photo')
