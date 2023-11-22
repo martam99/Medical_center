@@ -1,0 +1,39 @@
+/* stylelint-disable стилистический/селектор-список-запятая-новая строка-после */
+
+.blog-header-logo {
+  семейство шрифтов: «Playfair Display», Джорджия, «Times New Roman», serif/*rtl:Amiri, Georgia, «Times New Roman», serif*/;
+  размер шрифта: 2,25рем;
+}
+
+.blog-header-logo:hover {
+  текстовое оформление: нет;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  семейство шрифтов: «Playfair Display», Джорджия, «Times New Roman», serif/*rtl:Amiri, Georgia, «Times New Roman», serif*/;
+}
+
+.flex-auto {
+  гибкий: 0 0 авто;
+}
+
+.h-250 { высота: 250 пикселей; }
+@media (минимальная ширина: 768 пикселей) {
+  .h-md-250 { высота: 250 пикселей; }
+}
+
+/* Пагинация */
+.blog-пагинация {
+  поле-дно: 4rem;
+}
+
+/*
+ * Сообщения в блоге
+ */
+.Сообщение блога {
+  поле-дно: 4rem;
+}
+.blog-post-meta {
+  нижняя граница: 1,25 рем;
+  цвет: #727272;
+}
