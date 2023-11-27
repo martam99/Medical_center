@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+    {% block content %}
+      <form class="row" method="post" enctype="multipart/form-data">
+          <div class="card h-100">
+            <div class="card-header">
+              {% if user.is_authenticated %}
+                <h2>Редактирование профиля</h2>
+                  <div class="card-body">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit" class="btn btn-info">Редактировать</button>
+                  </div>
+              {% else %}
+                  <h2>Создать пользователя</h2>
+                    <div class="card-body">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-info">Сохранить</button>
+                    </div>
+              {% endif %}
+            </div>
+          </div>
+      </form>
+{% endblock %}

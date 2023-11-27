@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% blog content %}
+<main>
+  <header>
+    <h3>{{ object.title }}</h3>
+  </header>
+    <img src="{{ media/blog/object.photo }}">
+    <p>{{ object.content }}</p>
+</main>
+{% endblock %}

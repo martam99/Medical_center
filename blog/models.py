@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 NULLABLE = {'blank': True, 'null': True}
@@ -8,6 +10,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=150, verbose_name='заголовок')
     content = models.TextField(verbose_name='содержание')
     photo = models.ImageField(upload_to='blog/', verbose_name='photo')
+    published_date = models.DateField(verbose_name='дата публикации', default=datetime.datetime.utcnow())
 
     objects = models.Manager()
 
