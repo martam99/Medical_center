@@ -288,13 +288,13 @@
   <div class="navbar">
       <a class="nav-item nav-link link-light active" href="{% url 'main:base' %}" style="color: blue">Главная</a>
       <a class="nav-item nav-link link-light" href="{% url 'blog:blog_list' %}">Статьи</a>
-      <a class="nav-item nav-link link-light" href="#">О нас</a>
-      <a class="nav-item nav-link link-light" href="#">Контакты</a>
+      <a class="nav-item nav-link link-light" href="{% url 'main:home' %}">О нас</a>
+      <a class="nav-item nav-link link-light" href="{% url 'main:info' %}">Контакты</a>
       <div class="dropdown">
         <button class="dropbtn">Подразделения</button>
         <div class="dropdown-content">
           {% for object in service_list %}
-            <a href="#">object.service</a>
+            <a href="{% url 'medcenter:service_detail' object.pk %}"><h6>{{ object.service }}</h6></a>
           {% endfor %}
         </div>
       </div>
@@ -302,7 +302,7 @@
         <button class="dropbtn">Врачи</button>
         <div class="dropdown-content">
           {% for object in doctor_list %}
-            <a href="#">object.position</a>
+            <a href="{% url 'medcenter:doc_detail' object.pk %}">{{ object.position  }}</a>
           {% endfor %}
         </div>
       </div>

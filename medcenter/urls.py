@@ -7,7 +7,7 @@ from medcenter.views import ServicesDetailView, ServicesListView, DoctorsDetailV
 app_name = MedcenterConfig.name
 
 urlpatterns = [
-    path('detail/', ServicesDetailView.as_view(), name='service_detail'),
+    path('detail/<int:pk>/', ServicesDetailView.as_view(), name='service_detail'),
     path('list/', ServicesListView.as_view(), name='service_list'),
-    path('doc_detail/', DoctorsDetailView.as_view(), name='doc_detail'),
+    path('doc_detail/<int:pk>/', DoctorsDetailView.as_view(), name='doc_detail'),
 ]

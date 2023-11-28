@@ -10,7 +10,7 @@ class ServicesDetailView(DetailView):
 
 
 class ServicesListView(ListView):
-    model = Doctors
+    model = Services
 
 
 class DoctorsDetailView(DetailView):

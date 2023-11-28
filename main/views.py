@@ -16,3 +16,10 @@ class SiteTemplate(TemplateView):
         context_data['doctor_list'] = Doctors.objects.all
         return context_data
 
+
+def home(request):
+    return render(request, 'main/about_us.html')
+
+
+def info(request):
+    return render(request, 'main/info.html')

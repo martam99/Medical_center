@@ -7,7 +7,7 @@ from blog.models import NULLABLE
 class Doctors(models.Model):
     fullname = models.CharField(max_length=150, verbose_name='полное имя')
     mail = models.CharField(max_length=150, verbose_name='почта')
-    phone = models.IntegerField(verbose_name='номер телефона')
+    phone = models.CharField(max_length=30, verbose_name='номер телефона')
     position = models.CharField(max_length=150, verbose_name='должность', **NULLABLE)
 
     objects = models.Manager()
