@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 
 from blog.models import Blog
 
@@ -8,3 +8,8 @@ from blog.models import Blog
 class BlogView(DetailView):
     model = Blog
     template_name = 'blog/blog_detail.html'
+
+
+class BlogListView(ListView):
+    model = Blog
+    template_name = 'blog/blog_list.html'
