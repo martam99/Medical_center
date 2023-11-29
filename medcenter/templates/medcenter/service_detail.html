@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+  <header class="header_blog">
+    <h2>{{ object.service }}</h2>
+  </header>
+  <div class="image">
+    <img src="/media/{{ object.photo }}" width="350" height="300">
+  </div>
+   <div class="text_blog">
+      <p style="color:black">{{ object.content | linebreaks }}</p>
+    </div>
+</main>
+{% endblock %}

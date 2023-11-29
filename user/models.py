@@ -9,7 +9,7 @@ from blog.models import NULLABLE
 class User(AbstractUser):
     username = None
     email = models.CharField(max_length=150, verbose_name='почта', unique=True)
-    phone = models.ImageField(verbose_name='номер телефона', **NULLABLE)
+    phone = models.CharField(verbose_name='номер телефона', **NULLABLE)
     fullname = models.CharField(max_length=150, verbose_name='ФИО')
     is_active = models.BooleanField(default=True, verbose_name='activity')
 

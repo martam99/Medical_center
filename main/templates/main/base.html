@@ -145,6 +145,7 @@
     padding: 16px;
     font-size: 16px;
     border: none;
+    border-radius: 12px;}
       }
 
       .dropdown {
@@ -175,7 +176,7 @@
       .dropdown:hover .dropbtn {background-color: #4B0082;}
 
       .header_blog {
-          background: #87CEEB	; /* Цвет фона под заголовком */
+          background: #D3D3D3; /* Цвет фона под заголовком */
           color: black; /* Цвет текста */
           padding: 4px;
           }
@@ -187,6 +188,30 @@
             margin-right;
             background: #F0FFFF	;
             }
+
+        .alert {
+            padding: 20px;
+            background-color: #D2691E	;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+      /* The close button */
+      .closebtn {
+          margin-left: 15px;
+          color: white;
+          font-weight: bold;
+          float: right;
+          font-size: 22px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+      }
+
+      /* When moving the mouse over the close button */
+      .closebtn:hover {
+          color: black;
+      }
 
     </style>
 
@@ -290,19 +315,12 @@
       <a class="nav-item nav-link link-light" href="{% url 'blog:blog_list' %}">Статьи</a>
       <a class="nav-item nav-link link-light" href="{% url 'main:home' %}">О нас</a>
       <a class="nav-item nav-link link-light" href="{% url 'main:info' %}">Контакты</a>
-      <div class="dropdown">
-        <button class="dropbtn">Подразделения</button>
-        <div class="dropdown-content">
-          {% for object in service_list %}
-            <a href="{% url 'medcenter:service_detail' object.pk %}"><h6>{{ object.service }}</h6></a>
-          {% endfor %}
-        </div>
-      </div>
+      <a class="nav-item nav-link link-light" href="{% url 'medcenter:service_list' %}">Подразделения</a>
       <div class="dropdown">
         <button class="dropbtn">Врачи</button>
         <div class="dropdown-content">
           {% for object in doctor_list %}
-            <a href="{% url 'medcenter:doc_detail' object.pk %}">{{ object.position  }}</a>
+            <a href="{% url 'medcenter:doc_detail' object.pk %}"><b>{{ object.position  }}</b></a>
           {% endfor %}
         </div>
       </div>
@@ -315,8 +333,8 @@
 
 <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
   <ul>
-    <li><a href="#">Главная</a></li>
-    <li><a href="#">О нас</a></li>
+    <li><a href="{% url 'main:base' %}">Главная</a></li>
+    <li><a href="{% url 'main:home' %}">О нас</a></li>
     <li><a href="#">Наша команда</a></li>
     <li><a href="#">Врачи</a></li>
     <li><a href="#">Все службы</a></li>
