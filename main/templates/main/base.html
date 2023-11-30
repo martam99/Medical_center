@@ -140,8 +140,8 @@
       }
 
       .dropbtn {
-    background-color: #191970;
-    color: white;
+    background-color: #F0FFFF;
+    color: black;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -156,7 +156,7 @@
       .dropdown-content {
           display: none;
           position: absolute;
-          background-color: #AFEEEE;
+          background-color: #F0FFFF;
           min-width: 160px;
           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
           z-index: 1;
@@ -169,11 +169,11 @@
           display: block;
       }
 
-      .dropdown-content a:hover {background-color: #ddd;}
+      .dropdown-content a:hover {background-color: ##F0FFFF;}
 
       .dropdown:hover .dropdown-content {display: block;}
 
-      .dropdown:hover .dropbtn {background-color: #4B0082;}
+      .dropdown:hover .dropbtn {background-color: ##F0FFFF;}
 
       .header_blog {
           background: #D3D3D3; /* Цвет фона под заголовком */
@@ -213,6 +213,18 @@
           color: black;
       }
 
+      .pic{
+        float: right;
+      }
+
+      .pic_2{
+        float: left
+      }
+
+      .text_info{
+        margin-left: 110px;
+      }
+
     </style>
 
 
@@ -221,7 +233,7 @@
     <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
   </head>
-  <body style="background-color: #191970">
+  <body style="background-color: #F0FFFF">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -289,9 +301,9 @@
 
 <div class="container">
   <header class="border-bottom lh-1 py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center" style="color:#E0FFFF">
+    <div class="row flex-nowrap justify-content-between align-items-center" style="color:red">
       <div class="col-4 pt-1">
-        <span style="font-family: Wide Latin; color: white; font-size: 50px">MarMed</span>
+        <span style="font-family: Wide Latin; color: black; font-size: 50px ">MarMed</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-calendar2-plus-fill" viewBox="0 0 16 16">
         <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 3.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5H2.545c-.3 0-.545.224-.545.5m6.5 5a.5.5 0 0 0-1 0V10H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V11H10a.5.5 0 0 0 0-1H8.5z"/>
         </svg>
@@ -301,29 +313,31 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
         </a>
         {% if user.is_authenticated %}
-          <a class="btn btn-sm link-light" href="{% url 'user:logout' %}">Выйти</a>
+          <a class="btn btn-sm link-dark" href="{% url 'user:logout' %}"><b>Выйти</b></a>
         {% else %}
-          <a class="btn btn-sm link-light" href="{% url 'user:login' %}">Войти</a>
-          <a class="btn btn-sm link-light" href="{% url 'user:user_create' %}">Зарегистрироваться</a>
+          <a class="btn btn-sm link-dark" href="{% url 'user:login' %}"><b>Войти</b></a>
+          <a class="btn btn-sm link-dark" href="{% url 'user:user_create' %}"><b>Зарегистрироваться</b></a>
         {% endif %}
       </div>
     </div>
   </header>
 
   <div class="navbar">
-      <a class="nav-item nav-link link-light active" href="{% url 'main:base' %}" style="color: blue">Главная</a>
-      <a class="nav-item nav-link link-light" href="{% url 'blog:blog_list' %}">Статьи</a>
-      <a class="nav-item nav-link link-light" href="{% url 'main:home' %}">О нас</a>
-      <a class="nav-item nav-link link-light" href="{% url 'main:info' %}">Контакты</a>
-      <a class="nav-item nav-link link-light" href="{% url 'medcenter:service_list' %}">Подразделения</a>
+      <a class="nav-item nav-link link-dark active" href="{% url 'main:base' %}" style="color: blue">Главная</a>
+      <a class="nav-item nav-link link-dark" href="{% url 'blog:blog_list' %}">Статьи</a>
+      <a class="nav-item nav-link link-dark" href="{% url 'medcenter:service_list' %}">Разделы</a>
       <div class="dropdown">
-        <button class="dropbtn">Врачи</button>
+        <button class="dropbtn">Врачи&#8595</button>
         <div class="dropdown-content">
           {% for object in doctor_list %}
             <a href="{% url 'medcenter:doc_detail' object.pk %}"><b>{{ object.position  }}</b></a>
           {% endfor %}
         </div>
       </div>
+      <a class="nav-item nav-link link-dark" href="{% url 'main:info' %}">Контакты</a>
+      <a class="nav-item nav-link link-dark" href="{% url 'main:home' %}">О нас</a>
+
+
   </div>
 </div>
 
@@ -332,14 +346,12 @@
 {% endblock %}
 
 <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-  <ul>
     <li><a href="{% url 'main:base' %}">Главная</a></li>
     <li><a href="{% url 'main:home' %}">О нас</a></li>
     <li><a href="#">Наша команда</a></li>
     <li><a href="#">Врачи</a></li>
     <li><a href="#">Все службы</a></li>
-  </ul>
-  <p>&copy; 2023-{% now 'Y' %} <br>
+  <p>&copy; 2010-{% now 'Y' %} <br>
   МарМед медицинский центр. Все права защищены.</p>
 </footer>
 

@@ -10,7 +10,7 @@
         <img src="/media/{{ object.photo }}" width="220" height="200">
       </div>
     <div class="text_list">
-      <h6 style="color:white">{{ object.content | truncatechars:200 }}</h6>
+      <h6 style="color: black">{{ object.content | truncatechars:200 }}</h6>
     </div>
     <div class="button">
         <a href="{% url 'blog:blog_view' object.pk %}" type="button" class="btn btn-sm btn-info">Читать</a>
