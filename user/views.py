@@ -23,7 +23,7 @@ class UserCreate(CreateView):
         new_user = form.save()
         send_mail(
             subject='Поздравляем с регистрацией',
-            message='Вы зарегистрировались на нашей платформе, добро пожаловать',
+            message='Вы зарегистрировались на нашей платформе, добро пожаловать на МарМед',
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[new_user.email]
         )
